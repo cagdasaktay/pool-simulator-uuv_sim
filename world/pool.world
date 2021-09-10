@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+
+   <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <model name="water">
+      <static>true</static>
+      <pose>0 0 1.02 3.1415 0 3.1415</pose>
+      <link name="link">
+        <visual name="visual">
+          <transparency>0.6</transparency>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>26 51 2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.9 1</ambient>
+            <diffuse>0.2 0.2 0.9 1</diffuse>
+            <specular>0.1 0.1 0.3 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="pool">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="ground">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://pool/pool.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+              <mesh>
+                <uri>model://pool/pool.dae</uri>
+                <scale>1 1 1</scale>
+              </mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+  </world>
+</sdf>
